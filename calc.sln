@@ -1,0 +1,265 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace calc
+{
+    
+    public partial class Form1 : Form
+    {
+        float a, b, c;
+        double d;
+        int count;
+        bool znak = true;
+        public Form1()
+        {
+            InitializeComponent();
+            label1.Text = "";
+            label2.Text = "";
+            label3.Text = "";
+            textBox1.KeyPress += TextBox1_KeyPress;
+            this.ActiveControl = textBox1;
+
+
+
+        }
+        
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //KEYPRESSEVENT
+            //KEYPRESSEVENT
+            //KEYPRESSEVENT
+            //KEYPRESSEVENT
+            //KEYPRESSEVENT
+            this.ActiveControl = textBox1;
+
+        }
+        //===============================================BUTTON EVENTS===========================================//
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            textBox1.Text = textBox1.Text + 1;
+            this.ActiveControl = textBox1;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 2;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 3;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 4;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 5;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 6;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 7;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 8;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 9;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 0;
+            this.ActiveControl = textBox1;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 1;
+            label1.Text = a.ToString() + "+";
+            znak = true;
+            this.ActiveControl = textBox1;
+        }
+        //============================================SWITCH_CASE CALCULATING=====================================//
+        private void buttonEQUAL_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            switch (count)
+            {
+                case 1:
+                    b = a + float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+                case 2:
+                    b = a - float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+                case 3:
+                    b = a * float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+                case 4:
+                    b = a / float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 2;
+            label1.Text = a.ToString() + "-";
+            znak = true;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 3;
+            label1.Text = a.ToString() + "*";
+            znak = true;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 4;
+            label1.Text = a.ToString() + "/";
+            znak = true;
+        }
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            textBox1.Text = "";
+            label1.Text = "";
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            int lenght = textBox1.Text.Length - 1;
+            string text = textBox1.Text;
+            textBox1.Clear();
+            for(int i = 0; i < lenght; i++)
+            {
+                textBox1.Text = textBox1.Text + text[i];
+
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            c = float.Parse(textBox1.Text);
+            label3.Text = c.ToString();
+
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            textBox1.Text = textBox1.Text + c;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            c = 0;
+            label3.Text = "";
+            
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            c = c-float.Parse(textBox1.Text);
+            label3.Text = c.ToString();
+
+
+
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            b = float.Parse(textBox1.Text) * float.Parse(textBox1.Text);
+            textBox1.Text = b.ToString();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+          d = Math.Sqrt(float.Parse(textBox1.Text));
+            textBox1.Text = d.ToString();
+        }
+
+        //==================================SIGN CHANGE========================================================================s
+        private void button17_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            if (znak == true)
+            {
+                textBox1.Text = "-" + textBox1.Text;
+                znak = false;
+            }
+            else if (znak == false)
+            {
+                textBox1.Text = textBox1.Text.Replace("","");
+                znak = true;
+            }
+        }
+        
+        private void button16_Click(object sender, EventArgs e)
+
+        {
+            this.ActiveControl = textBox1;
+            textBox1.Text = textBox1.Text + ",";
+        }
+
+    }
+
+
+}
+
